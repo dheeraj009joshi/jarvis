@@ -1,0 +1,7 @@
+USER="Dheeraaj"
+BOTNAME="JARVIS"
+EMAIL="Dlovej009@gmail.com"
+PASSWORD="2006dheeraj"
+NEWS_API_KEY=None
+OPENWEATHER_APP_ID=None
+TMDB_API_KEY=None
