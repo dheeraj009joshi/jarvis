@@ -15,6 +15,7 @@ PASSWORD = PASSWORD
 
 def find_my_ip():
     ip_address = requests.get('https://api64.ipify.org?format=json').json()
+    print(ip_address)
     return ip_address["ip"]
 
 
@@ -31,10 +32,8 @@ def search_on_google(query):
     kit.search(query)
 
 
-def send_whatsapp_message(number, message):
-    currentTimeDate = datetime.datetime.now()
-    currentTime = str(currentTimeDate.strftime('%H:%M:%S')).split(":")
-    kit.sendwhatmsg(f"+91{number}", message,int(currentTime[0]),int(currentTime[1]))
+def send_whatsapp_message(number, message,hour,minutes):
+    kit.sendwhatmsg(f"+91{number}", message,hour,minutes)
 
 
 def send_email(receiver_address, subject, message):

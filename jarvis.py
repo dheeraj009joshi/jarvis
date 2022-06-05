@@ -1,11 +1,11 @@
+from fileinput import filename
 import requests
 from functions.online_ops import find_my_ip, get_latest_news, get_random_advice, get_random_joke, get_trending_movies, get_weather_report, play_on_youtube, search_on_google, search_on_wikipedia, send_email, send_whatsapp_message
 import pyttsx3
 import speech_recognition as sr
-# from decouple import config
 from config import USER,BOTNAME,EMAIL,PASSWORD
 from datetime import datetime
-from functions.os_ops import open_calculator, open_camera, open_cmd, open_notepad, open_discord
+from functions.os_ops import open_calculator, open_camera, open_cmd, open_notepad, open_discord, screenShot
 from random import choice
 from utils import opening_text
 from pprint import pprint
@@ -98,6 +98,11 @@ if __name__ == '__main__':
 
         elif 'open calculator' in query:
             open_calculator()
+        elif 'screenshot' in query:
+            speak("What name you want to give it sir !")
+            file_name = take_user_input().lower()
+            screenShot(file_name)
+            speak(f"Taken screenshot you can check that at output_screenshot/{filename}.png")
 
         elif 'ip address' in query:
             ip_address = find_my_ip()
@@ -123,12 +128,15 @@ if __name__ == '__main__':
             search_on_google(query)
 
         elif "send whatsapp message" in query:
-            speak(
-                'On what number should I send the message sir? Please enter in the console: ')
+            speak('On what number should I send the message sir? Please enter in the console: ')
             number = input("Enter the number: ")
             speak("What is the message sir?")
             message = take_user_input().lower()
-            send_whatsapp_message(number, message)
+            speak("plz provide me hour as per 24 system ")
+            hour=input("mention hours as per (24) ")
+            speak("plz provide me minutes ")
+            minutes=input("mention minutes  ")
+            send_whatsapp_message(number, message,hour,minutes)
             speak("I've sent the message sir.")
 
         elif "send an email" in query:
