@@ -1,4 +1,4 @@
-# This is a python jarvis project created by Dheeraj Joshi (GitHub :- dheeraj009joshi) and Harshitha Chinthareddy (GitHub :- chinthareddyharshitha)
+# This is a python jarvis project created by Dheeraj Joshi (GitHub :- dheeraj009joshi) 
 
 * There are two type of functions defined in functions folder:=
   1. online functions.
